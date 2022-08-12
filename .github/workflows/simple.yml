@@ -21,7 +21,7 @@ jobs:
       - name: multiline script
         run: |
           node -v
-          npn -v
+          npm -v
       - name: python Command
         run: |
           import platform
