@@ -1,8 +1,31 @@
 name: Action Workflow
 
 on: 
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  
+   push:
+      branches:
+         - master
+         - "feature/*" # matches feature/feat1, feature/featB, doesn't match feature/feat/a,
+         - 'feature/**' # to match feature/feat/a  use doble ** so will match feature/feat1, feature/featB and feature/feat/a
+#ignora:
+#      - '!feature/featC' 
+
+# para ignorar branches:
+#    branches-ignore: no se usa al mismo tiempo que brances
+#      - 'feature/featC'
+  #repository_dispatch:
+  #  types: [build]
+  #schedule:
+  #   -cron: "0/5 * * * *" each 5 min (minimo que se puede usar)
+  #   -cron: "0/6 * * * *" each 6 min
+  #push:
+      tags: #no se usa al mismo tiempo que tags-ignore
+        - v1.*
+      paths: #lo mismo.. no se usa paths-ignore y paths al mismo tiempo. ignora archivos
+        - "**.js"
+        - "!filename.js"
+   pull_request:
+      types: [closed, assigned, opened, reopened]
       
 
 jobs:
