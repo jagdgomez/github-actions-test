@@ -26,5 +26,6 @@ jobs:
           echo ${{ contains( 'hello', 'll')}}
           echo ${{ startsWith( 'hello', 'he')}}
           echo ${{ endsWith( 'hello', 'lo')}}
+          echo ${{ endsWith( 'hello', 'yo')}}
           echo ${{ format('Hello {0} {1} {2}', 'World','!','!')}}
         
