@@ -1,14 +1,24 @@
 name: Matrix
 on: push
+#run this job multiple time to have different environments with diff versions of node
 
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest,ubuntu-latest,windows-latest]
+        node_version: [6,8,10]
+      #max-parallel: 2
+      #max-parallel .. to limit how many job runs in parallel
+      #fail-fast: true
+      #fail fast.. true = if any job fails stops the other jobs, false = other jobs runs if any other fail
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version 
         run: node -v 
       - uses: actions/setup-node@v3
         with:
-          node-version: 6
+          node-version: ${{ matrix.node_version }}
+          #here use the reference above for the matrix
       - name: Log node version
         run: node -v 
