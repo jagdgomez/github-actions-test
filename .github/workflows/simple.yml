@@ -16,10 +16,14 @@ jobs:
    
   run-shell-command:
     runs-on: ubuntu-latest
+    #timeout-minutes: 360
     steps:
       - name: echo a string
         run: echo "Hello World"
+        #timeout-minutes: 30
+        #continue-on-error: true #to continue in case any step fail.
       - name: multiline script
+        #if: failure() -to continue the jobs if step fail.
         run: |
           node -v
           npm -v
