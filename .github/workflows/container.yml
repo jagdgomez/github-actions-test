@@ -10,19 +10,19 @@ jobs:
       - name: log node version
         run: node -v
       - name: step with docker 
-        uses: docker://node:16-alpine3.15
+        uses: docker://node:18-alpine3.15
         with:
           entrypoint: '/bin/echo'
           args: 'Hello World'
       - name: Log node version 
-        uses: docker://node:16-alpine3.15
+        uses: docker://node:18-alpine3.15
         with:
           entrypoint: user/local/bin/node
           args: -v
   node-docker:
     runs-on: ubuntu-latest
     container: 
-      image: node:16-alpine3.15
+      image: node:18-alpine3.15
 
     steps:
       - name: Log node version
