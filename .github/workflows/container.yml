@@ -5,7 +5,7 @@ jobs:
   docker-steps:
     runs-on: ubuntu-latest
     container:
-      image: 14-alpine3.1
+      image: node:14-alpine3.1
     steps:
       - name: log node version
         run: node -v
