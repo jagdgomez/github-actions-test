@@ -1,5 +1,5 @@
 name: Matrix
-on: push
+on: pull_request
 #run this job multiple time to have different environments with diff versions of node
 
 jobs:
