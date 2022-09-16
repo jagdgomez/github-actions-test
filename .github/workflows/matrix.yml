@@ -15,8 +15,8 @@ jobs:
         exclude:
         - os: ubuntu-latest
           node_version: 6
-        #   - os: macos-latest
-        #     node-version: 8
+        - os: macos-latest
+          node-version: 8
       
               #max-parallel: 2
               #max-parallel .. to limit how many job runs in parallel
@@ -36,4 +36,4 @@ jobs:
       - name: Log node version
         run: |
           node -v 
-          echo $IS_UBUNTU_8
+          echo "Ubuntu Version 8? " $IS_UBUNTU_8
