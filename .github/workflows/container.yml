@@ -7,6 +7,12 @@ jobs:
     container:
       image: 14-alpine3.1
     steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+         registry: ghcr.io
+         username: ${{ github.actor }}
+         password: ${{ secrets.GITHUB_TOKEN }}
       - name: log node version
         run: node -v
       - name: step with docker 
