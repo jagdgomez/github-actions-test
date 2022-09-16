@@ -12,9 +12,9 @@ jobs:
         - os: ubuntu-latest
           node_version: 8
           is_ubuntu_8: "true"
-        # exclude:
-        #   - os: ubuntu-latest
-        #     node-version: 6
+        exclude:
+        - os: ubuntu-latest
+          node-version: 6
         #   - os: macos-latest
         #     node-version: 8
       
