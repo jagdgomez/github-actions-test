@@ -23,6 +23,8 @@ jobs:
       - name: Run a Script 
         uses: docker://node:16-alpine3.15
         with:
+        #  for windows use: git update-index --chmod=+x your_script.sh
+        # for linux use: chmod +x your_script.sh
           entrypoint: ./script.sh
           args: "Some String"
   node-docker:
